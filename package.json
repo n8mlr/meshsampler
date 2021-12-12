@@ -10,9 +10,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "latest"
+    "parcel": "latest",
+    "@parcel/config-default": "latest",
+    "parcel-plugin-static-files-copy": "latest"
   },
   "dependencies": {
     "three": "^0.135.0"
+  },
+  "staticFiles": {
+    "staticPath": ["/static"]
   }
 }
