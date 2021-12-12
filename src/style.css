@@ -7,5 +7,5 @@ html, body {
 body {
     margin: 0;
     overflow: hidden;
-    background: #000;
+    background: radial-gradient(#ff3d6814, #a7348938 150%);
 }

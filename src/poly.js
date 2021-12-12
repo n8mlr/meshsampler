@@ -94,7 +94,8 @@ const palette = [
     new Color("#FEC6D5"),
     new Color("#218DB9"),
     new Color("#8ACEEA"),
-    new Color("#A15495")
+    new Color("#A15495"),
+    new Color("#CD4872"),
 ];
 
 const tmpPosition = new Vector3();
