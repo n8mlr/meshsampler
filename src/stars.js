@@ -91,6 +91,7 @@ const render = () => {
   sparkles.forEach((s, i) => {
       if (!s.stop) {
           s.update();
+
       }
   })
 };

@@ -1,11 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <title>My First Parcel App</title>
+<head>
+    <meta charset="UTF-8">
+    <title>Stars and stuff</title>
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="stars.js"></script>
-  </head>
-  <body>
-  </body>
+</head>
+<body>
+<main>
+    <div id="container" class="content"></div>
+</main>
+<script type="vert" id="vertexshader">
+			attribute float size;
+			attribute vec3 color;
+
+			varying vec3 vColor;
+
+			void main() {
+				vColor = color;
+				vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+				gl_PointSize = size;
+				gl_Position = projectionMatrix * mvPosition;
+			}
+
+</script>
+
+<script type="frag" id="fragmentshader">
+			uniform sampler2D pointTexture;
+			varying vec3 vColor;
+			void main() {
+				gl_FragColor = vec4(vColor, 1.0);
+				if (texture2D(pointTexture,gl_PointCoord).g < 0.7) discard;
+				gl_FragColor = gl_FragColor * texture2D(pointTexture, gl_PointCoord);
+			}
+
+</script>
+</body>
 </html>
